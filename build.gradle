@@ -1,0 +1,52 @@
+apply plugin: 'java'
+apply plugin: 'war' 
+
+
+repositories {
+    jcenter()
+}
+
+dependencies {   
+ 
+  
+	// https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+	compileOnly group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+	
+    providedCompile "javax.servlet:javax.servlet-api:3.1.0"      
+	
+	// This dependency is used internally, and not exposed to consumers on their own compile classpath.
+	implementation 'com.google.guava:guava:30.0-jre'
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+	implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.7.Final'
+	// https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api
+	//implementation group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version: '1.0.1.Final'
+	
+	// https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager
+	//implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '4.2.6'
+	
+	
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation group: 'org.postgresql', name: 'postgresql', version: '9.4-1206-jdbc42'
+	
+	// https://mvnrepository.com/artifact/com.google.inject/guice
+	implementation group: 'com.google.inject', name: 'guice', version: '5.0.1'
+	
+	// https://mvnrepository.com/artifact/com.google.inject.extensions/guice-servlet
+	implementation group: 'com.google.inject.extensions', name: 'guice-servlet', version: '3.0'
+	
+    
+}
+
+
+buildscript {
+
+    repositories {
+        jcenter()
+    }
+
+    dependencies {
+        //classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+    }
+}
+
+
